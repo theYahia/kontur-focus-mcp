@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "kontur-focus": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@theyahia/kontur-focus-mcp"
+      ],
+      "env": {
+        "KONTUR_FOCUS_API_KEY": "<YOUR_API_KEY>"
+      }
+    }
+  }
+}
