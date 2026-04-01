@@ -4,29 +4,45 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import {
   searchCompanySchema, handleSearchCompany,
-  getBriefReportSchema, handleGetBriefReport,
-  getAnalyticsSchema, handleGetAnalytics,
-  checkReliabilitySchema, handleCheckReliability,
+  getCompanyBriefSchema, handleGetCompanyBrief,
+  getCompanyDetailsSchema, handleGetCompanyDetails,
+  getFinancialStatementsSchema, handleGetFinancialStatements,
+  getArbitrationCasesSchema, handleGetArbitrationCases,
+  getBankruptcyInfoSchema, handleGetBankruptcyInfo,
+  getLicensesSchema, handleGetLicenses,
+  getRelatedCompaniesSchema, handleGetRelatedCompanies,
 } from "./tools/company.js";
 
-const server = new McpServer({ name: "kontur-focus-mcp", version: "1.0.0" });
+const server = new McpServer({ name: "kontur-focus-mcp", version: "2.0.0" });
 
-server.tool("search_company", "Search company by INN or OGRN in Kontur.Focus.", searchCompanySchema.shape,
+server.tool("search_company", "Search company by INN, OGRN, or name in Kontur.Focus.", searchCompanySchema.shape,
   async (params) => ({ content: [{ type: "text", text: await handleSearchCompany(params) }] }));
 
-server.tool("get_brief_report", "Get brief report for a company by INN.", getBriefReportSchema.shape,
-  async (params) => ({ content: [{ type: "text", text: await handleGetBriefReport(params) }] }));
+server.tool("get_company_brief", "Get brief company report by INN (risk summary).", getCompanyBriefSchema.shape,
+  async (params) => ({ content: [{ type: "text", text: await handleGetCompanyBrief(params) }] }));
 
-server.tool("get_analytics", "Get financial analytics for a company by INN.", getAnalyticsSchema.shape,
-  async (params) => ({ content: [{ type: "text", text: await handleGetAnalytics(params) }] }));
+server.tool("get_company_details", "Get full EGRUL extract for a company by INN.", getCompanyDetailsSchema.shape,
+  async (params) => ({ content: [{ type: "text", text: await handleGetCompanyDetails(params) }] }));
 
-server.tool("check_reliability", "Check counterparty reliability by INN.", checkReliabilitySchema.shape,
-  async (params) => ({ content: [{ type: "text", text: await handleCheckReliability(params) }] }));
+server.tool("get_financial_statements", "Get financial statements (balance sheet, P&L) by INN.", getFinancialStatementsSchema.shape,
+  async (params) => ({ content: [{ type: "text", text: await handleGetFinancialStatements(params) }] }));
+
+server.tool("get_arbitration_cases", "Get arbitration court cases by INN.", getArbitrationCasesSchema.shape,
+  async (params) => ({ content: [{ type: "text", text: await handleGetArbitrationCases(params) }] }));
+
+server.tool("get_bankruptcy_info", "Get bankruptcy proceedings info by INN.", getBankruptcyInfoSchema.shape,
+  async (params) => ({ content: [{ type: "text", text: await handleGetBankruptcyInfo(params) }] }));
+
+server.tool("get_licenses", "Get company licenses by INN.", getLicensesSchema.shape,
+  async (params) => ({ content: [{ type: "text", text: await handleGetLicenses(params) }] }));
+
+server.tool("get_related_companies", "Get affiliated/related companies by INN.", getRelatedCompaniesSchema.shape,
+  async (params) => ({ content: [{ type: "text", text: await handleGetRelatedCompanies(params) }] }));
 
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error("[kontur-focus-mcp] Server started. 4 tools registered.");
+  console.error("[kontur-focus-mcp] Server started. 8 tools registered.");
 }
 
 main().catch((error) => { console.error("[kontur-focus-mcp] Error:", error); process.exit(1); });

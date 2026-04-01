@@ -1,17 +1,21 @@
 # @theyahia/kontur-focus-mcp
 
-MCP server for **Kontur.Focus API** -- company search, brief reports, financial analytics, and counterparty reliability checks for Russian legal entities.
+MCP server for **Kontur.Focus API** -- company search, EGRUL extracts, financial statements, arbitration cases, bankruptcy, licenses, and affiliate networks for Russian legal entities.
 
-Part of the **Russian API MCP series** alongside [`@theyahia/dadata-mcp`](https://www.npmjs.com/package/@theyahia/dadata-mcp), [`@theyahia/huntflow-mcp`](https://www.npmjs.com/package/@theyahia/huntflow-mcp), [`@theyahia/superjob-mcp`](https://www.npmjs.com/package/@theyahia/superjob-mcp), and [`@theyahia/yookassa-mcp`](https://www.npmjs.com/package/@theyahia/yookassa-mcp).
+Part of the **Russian API MCP series** alongside [`@theyahia/dadata-mcp`](https://www.npmjs.com/package/@theyahia/dadata-mcp), [`@theyahia/spark-interfax-mcp`](https://www.npmjs.com/package/@theyahia/spark-interfax-mcp), and [`@theyahia/casebook-mcp`](https://www.npmjs.com/package/@theyahia/casebook-mcp).
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `search_company` | Search company by INN or OGRN |
-| `get_brief_report` | Brief company report by INN |
-| `get_analytics` | Financial analytics by INN |
-| `check_reliability` | Counterparty reliability check by INN |
+| `search_company` | Search company by INN, OGRN, or name |
+| `get_company_brief` | Brief company report with risk summary |
+| `get_company_details` | Full EGRUL extract |
+| `get_financial_statements` | Balance sheet, P&L, financial analytics |
+| `get_arbitration_cases` | Arbitration court cases |
+| `get_bankruptcy_info` | Bankruptcy proceedings |
+| `get_licenses` | Company licenses |
+| `get_related_companies` | Affiliated/related companies |
 
 ## Install
 
@@ -37,17 +41,16 @@ Add to your MCP config:
 |----------|----------|-------------|
 | `KONTUR_FOCUS_API_KEY` | Yes | API key from [Kontur.Focus](https://focus.kontur.ru/) |
 
-## Synergy with dadata-mcp
+## Demo Prompts
 
-Use **dadata-mcp** to resolve a company name, address, or partial input into an INN, then pass that INN to **kontur-focus-mcp** for deep due diligence:
-
-1. `suggest_company` (dadata-mcp) -- find the company and get its INN
-2. `search_company` (kontur-focus-mcp) -- full registration data
-3. `get_brief_report` -- risk summary
-4. `get_analytics` -- financials
-5. `check_reliability` -- counterparty check
-
-This two-server combo gives AI agents a complete Russian company intelligence pipeline.
+- "Find company info for INN 7707083893"
+- "Show me the EGRUL extract for Sberbank"
+- "Get financial statements for INN 7736050003"
+- "Are there any arbitration cases for INN 7710140679?"
+- "Check bankruptcy status for INN 5024164553"
+- "What licenses does company INN 7802849731 have?"
+- "Show affiliated companies for INN 7707083893"
+- "Search for companies named 'Yandex'"
 
 ## API Reference
 
