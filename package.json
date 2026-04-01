@@ -1,7 +1,7 @@
 {
   "name": "@theyahia/kontur-focus-mcp",
-  "version": "3.0.0",
-  "description": "MCP server for Kontur.Focus API — company search, EGRUL extracts, financial statements, arbitration, bankruptcy, licenses, affiliates.",
+  "version": "3.0.1",
+  "description": "MCP server for Kontur.Focus — company search, financials, counterparty check (Russia)",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
@@ -47,7 +47,11 @@
     "counterparty",
     "analytics",
     "inn",
-    "ogrn"
+    "ogrn",
+    "kontur-focus",
+    "api",
+    "typescript",
+    "data"
   ],
   "license": "MIT",
   "repository": {
