@@ -1,6 +1,6 @@
-# @theyahia/kontur-focus-mcp
+# Контур.Фокус MCP — проверка контрагента по ИНН через нейросеть
 
-MCP server for **Kontur.Focus API** -- company search, EGRUL extracts, financial statements, arbitration cases, bankruptcy, licenses, and affiliate networks for Russian legal entities.
+Если вы искали, как проверить контрагента по ИНН прямо в диалоге с ИИ, поднять выписку из ЕГРЮЛ, посмотреть арбитраж и банкротство или собрать финансовую отчётность юрлица без ручного поиска — это оно. 8 инструментов поверх **Kontur.Focus API**: поиск компаний, краткая справка с рисками, полная выписка ЕГРЮЛ, бухгалтерская отчётность, арбитражные дела, банкротство, лицензии и связанные компании.
 
 Part of the **Russian API MCP series** alongside [`@theyahia/dadata-mcp`](https://www.npmjs.com/package/@theyahia/dadata-mcp), [`@theyahia/spark-interfax-mcp`](https://www.npmjs.com/package/@theyahia/spark-interfax-mcp), and [`@theyahia/casebook-mcp`](https://www.npmjs.com/package/@theyahia/casebook-mcp).
 
@@ -61,3 +61,4 @@ Docs: [https://focus-api.kontur.ru/](https://focus-api.kontur.ru/)
 ## License
 
 MIT
+
