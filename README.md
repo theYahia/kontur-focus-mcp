@@ -2,26 +2,26 @@
 
 Если вы искали, как проверить контрагента по ИНН прямо в диалоге с ИИ, поднять выписку из ЕГРЮЛ, посмотреть арбитраж и банкротство или собрать финансовую отчётность юрлица без ручного поиска — это оно. 8 инструментов поверх **Kontur.Focus API**: поиск компаний, краткая справка с рисками, полная выписка ЕГРЮЛ, бухгалтерская отчётность, арбитражные дела, банкротство, лицензии и связанные компании.
 
-Part of the **Russian API MCP series** alongside [`@theyahia/dadata-mcp`](https://www.npmjs.com/package/@theyahia/dadata-mcp), [`@theyahia/spark-interfax-mcp`](https://www.npmjs.com/package/@theyahia/spark-interfax-mcp), and [`@theyahia/casebook-mcp`](https://www.npmjs.com/package/@theyahia/casebook-mcp).
+Часть серии **MCP-серверов к российским API** вместе с [`@theyahia/dadata-mcp`](https://www.npmjs.com/package/@theyahia/dadata-mcp), [`@theyahia/spark-interfax-mcp`](https://www.npmjs.com/package/@theyahia/spark-interfax-mcp) и [`@theyahia/casebook-mcp`](https://www.npmjs.com/package/@theyahia/casebook-mcp).
 
-## Tools
+## Инструменты
 
-| Tool | Description |
+| Инструмент | Описание |
 |------|-------------|
-| `search_company` | Search company by INN, OGRN, or name |
-| `get_company_brief` | Brief company report with risk summary |
-| `get_company_details` | Full EGRUL extract |
-| `get_financial_statements` | Balance sheet, P&L, financial analytics |
-| `get_arbitration_cases` | Arbitration court cases |
-| `get_bankruptcy_info` | Bankruptcy proceedings |
-| `get_licenses` | Company licenses |
-| `get_related_companies` | Affiliated/related companies |
+| `search_company` | Поиск компании по ИНН, ОГРН или названию |
+| `get_company_brief` | Краткая справка по компании со сводкой рисков |
+| `get_company_details` | Полная выписка из ЕГРЮЛ |
+| `get_financial_statements` | Баланс, отчёт о прибылях и убытках, финансовая аналитика |
+| `get_arbitration_cases` | Дела в арбитражных судах |
+| `get_bankruptcy_info` | Процедуры банкротства |
+| `get_licenses` | Лицензии компании |
+| `get_related_companies` | Аффилированные и связанные компании |
 
-## Install
+## Установка
 
 ### Claude Desktop / Cline / Cursor
 
-Add to your MCP config:
+Добавьте в конфигурацию MCP:
 
 ```json
 {
@@ -35,30 +35,29 @@ Add to your MCP config:
 }
 ```
 
-### Environment Variables
+### Переменные окружения
 
-| Variable | Required | Description |
+| Переменная | Обяз. | Описание |
 |----------|----------|-------------|
-| `KONTUR_FOCUS_API_KEY` | Yes | API key from [Kontur.Focus](https://focus.kontur.ru/) |
+| `KONTUR_FOCUS_API_KEY` | да | Ключ API из [Контур.Фокус](https://focus.kontur.ru/) |
 
-## Demo Prompts
+## Демо-промпты
 
-- "Find company info for INN 7707083893"
-- "Show me the EGRUL extract for Sberbank"
-- "Get financial statements for INN 7736050003"
-- "Are there any arbitration cases for INN 7710140679?"
-- "Check bankruptcy status for INN 5024164553"
-- "What licenses does company INN 7802849731 have?"
-- "Show affiliated companies for INN 7707083893"
-- "Search for companies named 'Yandex'"
+- «Найди информацию о компании по ИНН 7707083893»
+- «Покажи выписку из ЕГРЮЛ по Сбербанку»
+- «Достань бухгалтерскую отчётность по ИНН 7736050003»
+- «Есть ли арбитражные дела по ИНН 7710140679?»
+- «Проверь статус банкротства по ИНН 5024164553»
+- «Какие лицензии у компании с ИНН 7802849731?»
+- «Покажи аффилированные компании по ИНН 7707083893»
+- «Найди компании с названием „Яндекс“»
 
-## API Reference
+## Справочник API
 
-Base URL: `https://focus-api.kontur.ru/api3/`
+Базовый URL: `https://focus-api.kontur.ru/api3/`
 
-Docs: [https://focus-api.kontur.ru/](https://focus-api.kontur.ru/)
+Документация: [https://focus-api.kontur.ru/](https://focus-api.kontur.ru/)
 
-## License
+## Лицензия
 
 MIT
-
