@@ -1,3 +1,17 @@
+> ## 🗄 Репозиторий заархивирован
+>
+> Разработка переехала в **[theYahia/WWmcp](https://github.com/theYahia/WWmcp)** — монорепозиторий MCP-серверов для незападных API: СНГ, MENA, Африка, LATAM, Юго-Восточная Азия. Общее ядро `@theyahia/mcp-core`, единый CI, единый релизный конвейер.
+>
+> Актуальная версия того, что лежало здесь: [`servers/kontur-focus/`](https://github.com/theYahia/WWmcp/tree/main/servers/kontur-focus)
+>
+> Пакет в npm прежний — [`@theyahia/kontur-focus-mcp`](https://www.npmjs.com/package/@theyahia/kontur-focus-mcp), ставится и работает как раньше.
+> Здесь больше ничего не обновляется. Задачи и pull request'ы — в WWmcp.
+>
+> **Archived — development moved to [theYahia/WWmcp](https://github.com/theYahia/WWmcp),** a monorepo of MCP servers for non-Western APIs.
+> The current version of this package now lives at [`servers/kontur-focus/`](https://github.com/theYahia/WWmcp/tree/main/servers/kontur-focus).
+> The npm package [`@theyahia/kontur-focus-mcp`](https://www.npmjs.com/package/@theyahia/kontur-focus-mcp) is unchanged.
+> Please open issues and pull requests there.
+
 # Контур.Фокус MCP — проверка контрагента по ИНН через нейросеть
 
 Если вы искали, как проверить контрагента по ИНН прямо в диалоге с ИИ, поднять выписку из ЕГРЮЛ, посмотреть арбитраж и банкротство или собрать финансовую отчётность юрлица без ручного поиска — это оно. 8 инструментов поверх **Kontur.Focus API**: поиск компаний, краткая справка с рисками, полная выписка ЕГРЮЛ, бухгалтерская отчётность, арбитражные дела, банкротство, лицензии и связанные компании.
